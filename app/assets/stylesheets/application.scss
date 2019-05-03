@@ -27,64 +27,87 @@ div {
   width: 300px;
   float: left;
   color: white;
+  
+  &-top {
+    background-color: #253141;
+    height: 100px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+  
+    &__name {
+      font-size: 16px;
+      color: white;
+      font-weight: bold;
+    }
+  }
+
+  &-bottom {
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+    padding: 20px 20px 24px;
+  
+    &__name {
+      font-size: 15px;
+      color: white;
+      font-weight: bold;
+      padding-bottom: 5px;
+    }
+    
+    &__text {
+      font-size: 11px;
+      color: white;
+      font-weight: bold;
+      padding-bottom: 40px;
+    }
+  }
 }
 
 .main {
   width: calc(100% - 300px);
   float: left;
-}
 
-.side-top {
-  background-color: #253141;
-  height: 100px;
-  width: 100%;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
-}
+  &-top {
+    height: 100px;
+    display: flex;
+    border-bottom: solid 1px #eee;
+    padding: 0 40px;
+    justify-content: space-between;
 
-.side-bottom {
-  background-color: #2f3e51;
-  height: calc(100vh - 100px);
-  padding: 20px 20px 24px;
-}
-
-.main-top {
-  height: 100px;
-  width: 100%;
-  display: flex;
-  text-align: left;
-  border-bottom: solid 1px #eee;
-}
-
-.main-center {
-  height: calc(100vh - 190px);
-}
-
-.main-bottom {
-  height: 90px;
-  padding: 20px 40px;
-  background-color: #ddd;
-}
-
-.side-top__name {
-  font-size: 16px;
-  color: white;
-  font-weight: bold;
-}
-
-.side-bottom__name {
-  font-size: 15px;
-  color: white;
-  font-weight: bold;
-  padding-bottom: 5px;
-}
-
-.side-bottom__text {
-  font-size: 11px;
-  color: white;
-  font-weight: bold;
-  padding-bottom: 40px;
+    &__name {
+      font-size: 20px;
+      color: #333333;
+      padding-top: 35px;
+    }
+    
+    &__text {
+      font-size: 12px;
+      color: #999999;
+      padding-top: 15px;
+    }
+    
+    &__button {
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      margin-top: 28px;
+      border: solid 1px #38aef0;
+      color: #38aef0;
+    }
+  }
+  
+  &-center {
+    height: calc(100vh - 190px);
+    padding: 0 40px;
+  }
+  
+  &-bottom {
+    height: 90px;
+    padding: 20px 40px;
+    background-color: #ddd;
+  }
+  
 }
 
