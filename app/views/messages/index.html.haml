@@ -6,12 +6,11 @@
       .side-top__name test-name
       .side-top__icon
         =link_to "/#" do
-          .a.fa.fa-edit
+          .i.fa.fa-edit
         =link_to '/#' do
-          .a.fa.fa-cog
+          .i.fa.fa-cog
           
     .side-bottom
-      -#  ここ複数表示されるから部分テンプレにした方がよさそう
       .side-bottom__content
         .side-bottom__name test-group
         .side-bottom__text さようなら
@@ -37,4 +36,13 @@
         .center-content__date 2019/05/03(Thu) 16:00:00
       .main-center__text こんにちは！
 
-    .main-bottom type message
+    .main-bottom
+      .message
+        .message-box
+          %input.message-box__text{:placeholder => "type a message", :type => "text"}
+          %label.message-box__icon
+            %span.icon-image
+              .fa.fa-image
+            %input.icon-input{:name => "message[image]", :type => "file"}
+
+        %input.message__button{:type => "submit", :value => "Send"}

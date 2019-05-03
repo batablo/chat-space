@@ -13,20 +13,21 @@ div {
   box-sizing: border-box;
 }
 
-.a {
-  color: white;
+.fa {
+  color: $white;
+  display: inline-block;
 }
 
 .header {
-  background-color: #38AEF0;
-  color: white;
+  background-color: $light-blue;
+  color: $white;
   text-align: center;
 }
 
 .side {
   width: 300px;
   float: left;
-  color: white;
+  color: $white;
   
   &-top {
     background-color: #253141;
@@ -38,9 +39,7 @@ div {
     padding: 0 20px;
   
     &__name {
-      font-size: 16px;
-      color: white;
-      font-weight: bold;
+      @include font-design(16px, $white, bold);
     }
   }
 
@@ -50,16 +49,12 @@ div {
     padding: 20px 20px 24px;
   
     &__name {
-      font-size: 15px;
-      color: white;
-      font-weight: bold;
+      @include font-design(15px, $white, bold);
       padding-bottom: 5px;
     }
     
     &__text {
-      font-size: 11px;
-      color: white;
-      font-weight: bold;
+      @include font-design(11px, $white, bold);
       padding-bottom: 40px;
     }
   }
@@ -77,14 +72,12 @@ div {
     justify-content: space-between;
 
     &__name {
-      font-size: 20px;
-      color: #333333;
+      @include font-design(20px, #333333, normal);
       padding-top: 35px;
     }
     
     &__text {
-      font-size: 12px;
-      color: #999999;
+      @include font-design(12px, $text-gray, normal);
       padding-top: 15px;
     }
     
@@ -93,8 +86,8 @@ div {
       line-height: 40px;
       padding: 0 20px;
       margin-top: 28px;
-      border: solid 1px #38aef0;
-      color: #38aef0;
+      border: solid 1px $light-blue;
+      color: $light-blue;
     }
   }
   
@@ -107,22 +100,19 @@ div {
       margin-bottom: 10px;
       padding-top: 40px;
       align-items: center;
-      
+
       &__name {
-        font-size: 16px;
-        color: #434A54;
+        @include font-design(16px, #434A54, normal);
         padding-right: 10px;
       }
 
       &__date {
-        font-size: 12px;
-        color: #999999;
+        @include font-design(12px, $text-gray, normal);
       }
     }
 
     &__text {
-      font-size: 14px;
-      color: #434A54;
+      @include font-design(14px, #434A54, normal);
       padding-bottom: 40px;
     }
 
@@ -132,7 +122,46 @@ div {
     height: 90px;
     padding: 20px 40px;
     background-color: #ddd;
+
+    .message {
+      display: flex;
+
+      .message-box {
+        position: relative;
+        width: 100%;
+      }
+        input.message-box__text {
+          height: 50px;
+          width: 100%;
+          padding: 0 40px 0 10px;
+          color: #434a54;
+          border-style: none;
+        }
+
+        label.message-box__icon {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+        }
+          .fa.fa-image {
+            color: black;
+          }
+
+          input.icon-input {
+            display: none;
+          }
+
+      input.message__button {
+        width: 100px;
+        height: 50px;
+        background-color: $light-blue;
+        color: $white;
+        padding: 0 30px;
+        margin-left: 15px;
+        cursor: pointer;
+      }
+    }
   }
-  
 }
 
