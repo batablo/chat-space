@@ -1,0 +1,53 @@
+/*
+ *= require font-awesome
+ */
+
+@import "./reset";
+@import "./variable";
+
+.header {
+  background-color: #38AEF0;
+  color: white;
+  text-align: center;
+}
+
+.side {
+  width: 300px;
+  float: left;
+  color: white;
+}
+
+.main {
+  width: calc(100% - 300px);
+  float: left;
+}
+
+.side-top {
+  background-color: #253141;
+  height: 100px;
+  width: 100%;
+}
+
+.side-bottom {
+  background-color: #2f3e51;
+  height: calc(100vh - 100px);
+  padding: 20px 20px 24px;
+}
+
+.main-top {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  text-align: left;
+  border-bottom: solid 1px #eee;
+}
+
+.main-center {
+  height: calc(100vh - 190px);
+}
+
+.main-bottom {
+  height: 90px;
+  padding: 20px 40px;
+  background-color: #ddd;
+}
