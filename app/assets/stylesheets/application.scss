@@ -5,6 +5,18 @@
 @import "./reset";
 @import "./variable";
 
+div {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.a {
+  color: white;
+}
+
 .header {
   background-color: #38AEF0;
   color: white;
@@ -26,6 +38,10 @@
   background-color: #253141;
   height: 100px;
   width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
 }
 
 .side-bottom {
@@ -51,3 +67,11 @@
   padding: 20px 40px;
   background-color: #ddd;
 }
+
+.side-top__text {
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+}
+
+

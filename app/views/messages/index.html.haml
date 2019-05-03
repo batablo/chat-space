@@ -3,8 +3,13 @@
 .wrapper
   .side
     .side-top
-      .fa.fa-edit
-      .fa.fa-cog
+      .side-top__text test-name
+      .side-top__icon
+        =link_to "/#" do
+          .a.fa.fa-edit
+        =link_to '/#' do
+          .a.fa.fa-cog
+          
     .side-bottom
       .group-name 
       .group-text 
