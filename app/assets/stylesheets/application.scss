@@ -68,10 +68,23 @@ div {
   background-color: #ddd;
 }
 
-.side-top__text {
+.side-top__name {
   font-size: 16px;
   color: white;
   font-weight: bold;
 }
 
+.side-bottom__name {
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.side-bottom__text {
+  font-size: 11px;
+  color: white;
+  font-weight: bold;
+  padding-bottom: 40px;
+}
 
