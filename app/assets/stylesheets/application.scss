@@ -101,6 +101,31 @@ div {
   &-center {
     height: calc(100vh - 190px);
     padding: 0 40px;
+
+    .center-content {
+      display: flex;
+      margin-bottom: 10px;
+      padding-top: 40px;
+      align-items: center;
+      
+      &__name {
+        font-size: 16px;
+        color: #434A54;
+        padding-right: 10px;
+      }
+
+      &__date {
+        font-size: 12px;
+        color: #999999;
+      }
+    }
+
+    &__text {
+      font-size: 14px;
+      color: #434A54;
+      padding-bottom: 40px;
+    }
+
   }
   
   &-bottom {
