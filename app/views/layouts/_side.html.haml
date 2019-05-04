@@ -10,13 +10,9 @@
         
   .side-bottom
     .side-bottom__content
-      .side-bottom__name test-group
-      .side-bottom__text さようなら
-    
-    .side-bottom__content
-      .side-bottom__name sample-group
-      .side-bottom__text hello!
-    
-    .side-bottom__content
-      .side-bottom__name example
-      .side-bottom__text まだメッセージがありません
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .side-bottom__name
+            = group.name
+          .side-bottom__message
+            メッセージはまだありません。
