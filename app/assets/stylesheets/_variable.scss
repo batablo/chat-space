@@ -1,8 +1,3 @@
-$light-blue:         #38AEF0;
-$white:              #FFFFFF;
-$text-gray:          #999999;
-
-
 @mixin font-design($font-size, $color, $font-weight) {
   font-size: $font-size;
   color: $color;
