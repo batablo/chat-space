@@ -1,0 +1,159 @@
+div {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.fa {
+  color: $white;
+  display: inline-block;
+}
+
+.header {
+  background-color: $light-blue;
+  color: $white;
+  text-align: center;
+}
+
+.side {
+  width: 300px;
+  float: left;
+  color: $white;
+  
+  &-top {
+    background-color: #253141;
+    height: 100px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+  
+    &__name {
+      @include font-design(16px, $white, bold);
+    }
+  }
+
+  &-bottom {
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+    padding: 20px 20px 24px;
+  
+    &__name {
+      @include font-design(15px, $white, bold);
+      padding-bottom: 5px;
+    }
+    
+    &__text {
+      @include font-design(11px, $white, bold);
+      padding-bottom: 40px;
+    }
+  }
+}
+
+.main {
+  width: calc(100% - 300px);
+  float: left;
+
+  &-top {
+    height: 100px;
+    display: flex;
+    border-bottom: solid 1px #eee;
+    padding: 0 40px;
+    justify-content: space-between;
+
+    &__name {
+      @include font-design(20px, #333333, normal);
+      padding-top: 35px;
+    }
+    
+    &__text {
+      @include font-design(12px, $text-gray, normal);
+      padding-top: 15px;
+    }
+    
+    &__button {
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      margin-top: 28px;
+      border: solid 1px $light-blue;
+      color: $light-blue;
+    }
+  }
+  
+  &-center {
+    height: calc(100vh - 190px);
+    padding: 0 40px;
+
+    .center-content {
+      display: flex;
+      margin-bottom: 10px;
+      padding-top: 40px;
+      align-items: center;
+
+      &__name {
+        @include font-design(16px, #434A54, normal);
+        padding-right: 10px;
+      }
+
+      &__date {
+        @include font-design(12px, $text-gray, normal);
+      }
+    }
+
+    &__text {
+      @include font-design(14px, #434A54, normal);
+      padding-bottom: 40px;
+    }
+
+  }
+  
+  &-bottom {
+    height: 90px;
+    padding: 20px 40px;
+    background-color: #ddd;
+
+    .message {
+      display: flex;
+
+      &-box {
+        position: relative;
+        width: 100%;
+      }
+        &-box__text {
+          height: 50px;
+          width: 100%;
+          padding: 0 40px 0 10px;
+          color: #434a54;
+          border-style: none;
+        }
+
+        &-box__icon {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+        }
+          .fa.fa-image {
+            color: black;
+          }
+
+          .icon-input {
+            display: none;
+          }
+
+      &__button {
+        width: 100px;
+        height: 50px;
+        background-color: $light-blue;
+        color: $white;
+        padding: 0 30px;
+        margin-left: 15px;
+        cursor: pointer;
+      }
+    }
+  }
+}

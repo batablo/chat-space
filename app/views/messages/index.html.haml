@@ -1,0 +1,28 @@
+.header グループを作成しました
+
+.wrapper
+  = render partial: "side"
+
+  .main
+    .main-top
+      .main-top__content
+        .main-top__name test-group
+        .main-top__text Members: member
+      .main-top__button Edit
+
+    .main-center
+      .center-content
+        .center-content__name test-user
+        .center-content__date 2019/05/03(Thu) 16:00:00
+      .main-center__text こんにちは！
+
+    .main-bottom
+      .message
+        .message-box
+          %input.message-box__text{placeholder: "type a message", type: "text"}
+          %label.message-box__icon
+            %span.icon-image
+              .fa.fa-image
+            %input.icon-input{name: "message[image]", type: "file"}
+
+        %input.message__button{type: "submit", value: "Send"}
