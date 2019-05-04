@@ -70,7 +70,7 @@ div {
     }
     
     &__text {
-      @include font-design(12px, $text-gray, normal);
+      @include font-design(12px, $light_gray, normal);
       padding-top: 15px;
     }
     
@@ -100,7 +100,7 @@ div {
       }
 
       &__date {
-        @include font-design(12px, $text-gray, normal);
+        @include font-design(12px, $light_gray, normal);
       }
     }
 
