@@ -1,10 +1,11 @@
 .side
   .side-top
-    .side-top__name test-name
+    %h3.side-top__name
+      = current_user.name
     .side-top__icon
       =link_to "/#" do
         .i.fa.fa-edit
-      =link_to '/#' do
+      =link_to edit_user_path(current_user) do
         .i.fa.fa-cog
         
   .side-bottom
