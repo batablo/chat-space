@@ -6,6 +6,10 @@ div {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 .fa {
   color: $white;
   display: inline-block;
