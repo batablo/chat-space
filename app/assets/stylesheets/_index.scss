@@ -11,48 +11,6 @@ div {
   display: inline-block;
 }
 
-.header {
-  background-color: $light-blue;
-  color: $white;
-  text-align: center;
-}
-
-.side {
-  width: 300px;
-  float: left;
-  color: $white;
-  
-  &-top {
-    background-color: #253141;
-    height: 100px;
-    width: 100%;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-  
-    &__name {
-      @include font-design(16px, $white, bold);
-    }
-  }
-
-  &-bottom {
-    background-color: #2f3e51;
-    height: calc(100vh - 100px);
-    padding: 20px 20px 24px;
-  
-    &__name {
-      @include font-design(15px, $white, bold);
-      padding-bottom: 5px;
-    }
-    
-    &__text {
-      @include font-design(11px, $white, bold);
-      padding-bottom: 40px;
-    }
-  }
-}
-
 .main {
   width: calc(100% - 300px);
   float: left;

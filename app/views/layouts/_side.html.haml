@@ -1,18 +1,18 @@
 .side
-  .side-top
-    %h3.side-top__name
+  .header
+    .header__name
       = current_user.name
-    .side-top__icon
+    .header__lists
       =link_to new_group_path do
-        .i.fa.fa-edit
+        .icon.fa.fa-edit
       =link_to edit_user_path(current_user) do
-        .i.fa.fa-cog
+        .icon.fa.fa-cog
         
-  .side-bottom
-    .side-bottom__content
-      - current_user.groups.each do |group|
+  .groups
+    - current_user.groups.each do |group|
+      .group
         = link_to group_messages_path(group) do
-          .side-bottom__name
+          .group__name
             = group.name
-          .side-bottom__message
+          .group__message
             メッセージはまだありません。
