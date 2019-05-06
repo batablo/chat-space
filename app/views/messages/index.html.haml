@@ -8,19 +8,13 @@
         .main-top__text Members: member
       .main-top__button Edit
 
-    .main-center
-      .center-content
-        .center-content__name test-user
-        .center-content__date 2019/05/03(Thu) 16:00:00
-      .main-center__text こんにちは！
+    = render @messages
 
-    .main-bottom
-      .message
-        .message-box
-          %input.message-box__text{placeholder: "type a message", type: "text"}
-          %label.message-box__icon
-            %span.icon-image
-              .fa.fa-image
-            %input.icon-input{name: "message[image]", type: "file"}
-
-        %input.message__button{type: "submit", value: "Send"}
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :text, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            .icon.fa.fa-image
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
