@@ -1,12 +1,23 @@
 .wrapper
-  = render partial: "layouts/side"
 
-  .main
-    .main-top
-      .main-top__content
-        .main-top__name test-group
-        .main-top__text Members: member
-      .main-top__button Edit
+  = render 'shared/side_bar'
+
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          グループ名
+        %ul.left-header__members
+          Member：
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+      .right-header
+        .right-header__button
+          Edit
 
     = render @messages
 
@@ -15,6 +26,6 @@
         = f.text_field :text, class: 'form__message', placeholder: 'type a message'
         .form__mask
           = f.label :image, class: 'form__mask__image' do
-            .icon.fa.fa-image
+            = fa_icon 'picture-o', class: 'icon'
             = f.file_field :image, class: 'hidden'
         = f.submit 'Send', class: 'form__submit'
