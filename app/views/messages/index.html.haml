@@ -18,8 +18,8 @@
       .right-header
         .right-header__button
           Edit
-
-    = render @messages
+    .messages
+      = render @messages
 
     .form
       = form_for [@group, @message] do |f|
