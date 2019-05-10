@@ -44,6 +44,7 @@ $(function (){
 
     .fail(function(){
       alert('投稿に失敗しました。');
-    });
+    })
+
   });
 });
