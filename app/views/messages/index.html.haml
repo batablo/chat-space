@@ -18,12 +18,12 @@
       .right-header
         .right-header__button
           Edit
-
-    = render @messages
+    .messages
+      = render @messages
 
     .form
       = form_for [@group, @message] do |f|
-        = f.text_field :text, class: 'form__message', placeholder: 'type a message'
+        = f.text_field :text, class: 'form__message', pdlaceholder: 'type a message'
         .form__mask
           = f.label :image, class: 'form__mask__image' do
             = fa_icon 'picture-o', class: 'icon'
