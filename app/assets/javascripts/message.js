@@ -49,7 +49,11 @@ $(function (){
   });
 
   var reloadMessages = function() {
-    last_message_id = $('.message:last').data('message-id')
+    if ($('.chat')[0]) {
+      var last_message_id = $('.message:last').data('message-id')
+    } else{
+      return false;
+    };
     $.ajax({
       url: 'api/messages',
       type: 'get',
