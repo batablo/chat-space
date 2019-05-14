@@ -45,33 +45,33 @@ $(function (){
     .fail(function(){
       alert('投稿に失敗しました。');
     })
-
+    
   });
 
-  var autoUpdate = setInterval(function() {
+  var reloadMessages = function() {
     if (location.pathname.match(/\/groups\/\d+\/messages/)){
-      var last_message_id = $('.message:last').data('message-id')
+      var last_message_id = $('.message:last').data('message-id');
+      var url = location.href.replace('/messages','')+'/api/messages';
+      
       $.ajax({
-        url: location.pathname,
+        url: url,
         type: 'GET',
         dataType: 'json',
         data: {id: last_message_id}
       })
+      
       .done(function(messages) {
         var insertHTML = '';
         messages.forEach(function(message) {
           insertHTML += buildHTML(message);
-          if(message) {
-            $('.messages').append(insertHTML);
-            $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight }, 'fast')
-          }
         });
+        $('.messages').append(insertHTML);
+        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight }, 'fast')
       })
-      .fail(function(data) {
+      .fail(function() {
         alert('自動更新に失敗しました。');
       });
-    } else {
-      clearInterval(autoUpdate);
-    }
-  }, 5000);
+    };
+  }
+  setInterval(reloadMessages, 5000);
 });
