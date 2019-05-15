@@ -49,14 +49,14 @@ $(function (){
   });
 
   var reloadMessages = setInterval(function() {
-    if (location.pathname.match(/\/groups\/\d+\/messages/)){      
+    if (location.pathname.match(/\/groups\/\d+\/messages/)){
       var lastMessageId = $('.message:last').data('message-id');
 
       $.ajax({
         url: loctaion.pathname,
         type: 'GET',
         dataType: 'json',
-        data: {id: lastMessageId}
+        data: {lastMessageId: lastMessageId}
       })
 
       .done(function(messages) {
@@ -64,11 +64,11 @@ $(function (){
         messages.forEach(function(message) {
           insertHTML += buildHTML(message);
           $('.messages').append(insertHTML);
-          $(".messages").animate({scrollTop:$(".messages")[0].scrollHeight});
+          $('.messages').animate({scrollTop:$(".messages")[0].scrollHeight},'fast');
         });
       })  
         
-      .fail(function() {
+      .fail(function(messages) {
         alert('自動更新に失敗しました。');
       })
     } else {
