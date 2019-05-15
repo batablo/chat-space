@@ -48,26 +48,31 @@ $(function (){
     
   });
 
-  var reloadMessages = function() {
-    var groupId = $('.left-header').data('group-id');
-    var lastMessageId = $('.message:last').data('message-id');
+  var reloadMessages = setInterval(function() {
+    if (location.pathname.match(/\/groups\/\d+\/messages/)){      
+      var lastMessageId = $('.message:last').data('message-id');
 
-    $.ajax({
-      url: ` /groups/${groupId}/api/messages`,
-      type: 'get',
-      dataType: 'json',
-      data: {id: lastMessageId}
-    })
-    .done(function(messages) {
-      messages.forEach(function(message){
-        var html = buildHTML(message);
-        $('.messages').append(html);
-      });  
-      $(".messages").animate({scrollTop:$(".messages")[0].scrollHeight});
-    })
-    .fail(function() {
-      alert('自動更新に失敗しました。');
-    })
-  };
-  setInterval(reloadMessages, 5000);
+      $.ajax({
+        url: loctaion.pathname,
+        type: 'GET',
+        dataType: 'json',
+        data: {id: lastMessageId}
+      })
+
+      .done(function(messages) {
+        var insertHTML = '';
+        messages.forEach(function(message) {
+          insertHTML += buildHTML(message);
+          $('.messages').append(insertHTML);
+          $(".messages").animate({scrollTop:$(".messages")[0].scrollHeight});
+        });
+      })  
+        
+      .fail(function() {
+        alert('自動更新に失敗しました。');
+      })
+    } else {
+      clearInterval(reloadMessages);
+    }
+  }, 5000);
 });
