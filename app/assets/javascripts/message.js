@@ -1,6 +1,6 @@
 $(function (){
   function buildHTML(message){
-    var img = message.image == null ? "" : `<img src="${message.image}">`;
+    var img = message.image_url ? `<img class="lower-message__image" src="${ message.image_url }">` : ``
     var html = `<div class="message" data-message-id="${ message.id }">
                   <div class="upper-message">
                     <div class="upper-message__user-name">
@@ -81,5 +81,5 @@ $(function (){
       });
     };
   }
-  setInterval(reloadMessages, 3000);
+  setInterval(reloadMessages, 5000);
 });
