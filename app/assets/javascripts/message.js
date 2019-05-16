@@ -39,7 +39,7 @@ $(function (){
       $('.messages').append(html);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight }, 'fast')
       $('.form__message').val('');
-      $('#form__image').val('');
+      $('.hidden').val('');
     })
 
     .fail(function(){
