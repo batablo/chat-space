@@ -52,7 +52,12 @@ $(function (){
 
   var reloadMessages = function() {
     if (location.pathname.match(/\/groups\/\d+\/messages/)){
-      var last_message_id = $('.message:last').data('message-id');
+      if ($('.message')[0]){
+        var last_message_id = $('.message:last').data('message-id');
+      }else{
+        var last_message_id = 0;
+      }
+
       var url = location.href.replace('/messages','')+'/api/messages';
 
       $.ajax({
