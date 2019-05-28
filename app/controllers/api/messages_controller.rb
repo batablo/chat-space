@@ -5,7 +5,7 @@ class Api::MessagesController < ApplicationController
     @messages = @group.messages.where('id > ?', params[:id] )
     respond_to do |format|
       format.json
-    end   
+    end
   end
 
   private
